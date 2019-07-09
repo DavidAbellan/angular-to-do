@@ -1,0 +1,17 @@
+<div *ngFor="let task of data">
+    <p>Está completada : </p>     
+    <input type="checkbox" [checked]="task.complete" (change)="emitCompleteId(task.id)" >
+
+<div  [(colorPicker)]="task.color" [style.background]="task.color" 
+(colorPickedChange)="emitCambiaColor(task.id,task.color)" >
+   
+    <h1 [class]="task.complete ? 'completada' : ''" >{{task.text}}</h1>
+    <p> está completada : {{task.complete}}</p>
+
+     <button (click)="emiteDeleteId(task.id)">Borrar</button>
+     <label>{{task.date | formatDate}}</label>
+     <label>
+    </label>
+</div>
+</div>
+
